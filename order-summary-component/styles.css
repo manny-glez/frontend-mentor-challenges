@@ -1,4 +1,7 @@
-/* General Reset */
+/* ---------- FONTS ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
+/* ---------- GENERAL RESET ---------- */
 *,
 *::before,
 *::after {
@@ -34,10 +37,7 @@ body {
   background-color: #e0e7ff;
   display: grid;
   place-content: center;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 img,
@@ -68,8 +68,31 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
+/* ---------- UTILITY CLASSES ---------- */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
 /* ---------- GENERAL STYLES ---------- */
+h1,
+h2,
+h3,
+h4 {
+  color: #1F2E55;
+}
+
+a {
+  color: #382AE1;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 17.2px;
+}
+
+a:hover {
+  color: #766CF1;
+  text-decoration: none;
+}
+
 .background-svg {
   position: absolute;
   top: 0;
@@ -78,7 +101,51 @@ select {
   z-index: -999;
 }
 
-/* ---------- ORDER-SUMMARY CARD ---------- */
+h2 {
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 37.04px;
+  margin: 10px 0;
+}
+
+p {
+  color: #717FA6;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.button {
+  border-radius: 11px;
+  box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+  background-color: #382AE1;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 10px 0px;
+}
+
+.button:hover {
+  transition: 200ms;
+  background-color: #766cf1;
+  box-shadow: none;
+}
+
+.no-style-btn {
+  color: #717FA6;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.no-style-btn:hover {
+  color: #000;
+  background-color: transparent;
+}
+
+/* ---------- ORDER SUMMARY CARD ---------- */
 .order-summary-card {
   width: 450px;
   height: 697px;
@@ -86,6 +153,7 @@ select {
   border-radius: 20px;
   box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
   overflow: hidden;
+  animation: fade-in 500ms;
 }
 
 .card-hero {
@@ -96,4 +164,44 @@ select {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+  text-align: center;
+}
+
+.order-view {
+  display: flex;
+  flex-direction: row;
+  background-color: #f7f9ff;
+  border-radius: 11px;
+  margin: 20px 0px;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+}
+
+.card-content .flex-row {
+  gap: 20px;
+}
+
+/* ---------- ANIMATONS ---------- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+@media screen and (max-width: 500px) {
+  .order-summary-card {
+    transition: 500ms;
+    transform: scale(0.7);
+  }
 }
