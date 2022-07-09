@@ -77,12 +77,17 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
+/* ---- UTILITY CLASSES ---- */
+.text-accent {
+  color: var(--soft-violet);
+}
 /* ---- GENERAL STYLES ---- */
 body {
   background-color: var(--blue-dark);
   color: var(--white-paragraph);
   font-size: 15px;
+  display: grid;
+  place-content: center;
 }
 
 h1,
@@ -91,4 +96,140 @@ h3,
 h4,
 h5 {
   color: var(--white-heading);
+  font-family: var(--font-heading);
+}
+
+h2 {
+  font-size: 35px;
+  margin: 10px;
+  margin-bottom: 20px;
+  line-height: 49px;
+}
+
+h3 {
+  font-size: 33px;
+  font-family: var(--white-stats);
+}
+
+h5 {
+  color: var(--white-stats);
+  font-size: 15px;
+  font-weight: 100;
+}
+
+p {
+  font-family: var(--font-paragraph);
+  font-size: 20px;
+  margin: 10px;
+}
+
+/* ---- STAT CARD ---- */
+.stat-card {
+  width: 1200px;
+  height: 500px;
+  background-color: var(--blue-desaturated);
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: fade-in 500ms;
+}
+
+.stat-card-content {
+  width: 50%;
+  height: 100%;
+  padding: 50px;
+}
+
+.stat-card-img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  background-image: url('images/image-header-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.img-overlay {
+  background-color: hsla(277, 64%, 61%, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.stats-row {
+  display: flex;
+  flex-direction: row;
+  margin: 80px 10px;
+  gap: 40px;
+  line-height: 15px;
+}
+
+/* ---- ANIMATION ---- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* ----- MEDIA QUERIES ---- */
+@media screen and (max-width: 1200px) {
+  .stat-card {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .stat-card {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 890px) {
+  h2 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 0;
+  }
+  
+  p {
+    font-size: 20px;
+    transform: scale(0.9);
+    margin: 0;
+    padding: 0;
+  }
+
+  .stat-card {
+    margin: auto;
+    width: 90%;
+    height: 800px;
+    flex-direction: column-reverse;
+    text-align: center;
+    transform: scale(1);
+  }
+
+  .stat-card-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/image-header-mobile.jpg');
+  }
+
+  .stat-card-content {
+    width: 100%;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    margin: 0;
+    gap: 10px;
+    line-height: 1.2;
+    margin-top: 30px;
+  }
 }
