@@ -40,10 +40,17 @@ html:focus-within {
 
 body {
   min-height: 100vh;
+  color: var(--blue-grey);
+  display: grid;
+  place-content: center;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: 18px;
   font-family: 'Kumbh Sans', sans-serif;
+  background: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+  background-color: var(--dark-cyan);
 }
 
 img,
@@ -72,5 +79,119 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ---- UTILITY CLASSES ---- */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* ---- GENERAL STYLES ---- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+
+p {
+  font-size: 18px;
+}
+
+.bg-pattern-top {
+  position: absolute;
+  overflow: hidden;
+  z-index: -999;
+  top: -200px;
+  left: -200px;
+  animation: fade-in 500ms;
+}
+
+.bg-pattern-bottom {
+  position: absolute;
+  overflow: hidden;
+  z-index: -999;
+  bottom: -200px;
+  right: -200px;
+  animation: fade-in 500ms;
+}
+
+/* ---- PROFILE CARD ---- */
+.profile-card {
+  height: 420px;
+  width: 414px;
+  background-color: #FFF;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  animation: fade-in 500ms;
+  text-align: center;
+}
+
+.profile-card .flex-row {
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.profile-card-banner {
+  height: 140px;
+  width: 100%;
+  background-color: var(--dark-cyan);
+  background-image: url(images/bg-pattern-card.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.profile-img {
+  left: 35%;
+  position: absolute;
+  bottom: -50px;
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid #FFF 5px;
+}
+
+.profile-about {
+  padding: 69px 20px 40px 20px;
+}
+
+.profile-stats {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 30px 25px 25px 25px;
+  gap: 50px;
+  border-top: solid rgb(226, 226, 226) 1px;
+  margin: auto;
+}
+
+.profile-stats p {
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+/* ---- ANIMATION ---- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile-card {
+    transition: 500ms;
+    transform: scale(0.8);
   }
 }
