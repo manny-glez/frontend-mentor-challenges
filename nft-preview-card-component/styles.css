@@ -43,10 +43,15 @@ html:focus-within {
 
 body {
   min-height: 100vh;
+  background-color: var(--dark-blue-bg);
+  color: var(--soft-blue);
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: 18px;
+  font-weight: 400;
   font-family: 'Outfit', sans-serif;
+  display: grid;
+  place-content: center;
 }
 
 img,
@@ -75,5 +80,130 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+/* ---- UTILITY CLASS ---- */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* ---- GENERAL STYLES  ---- */
+h3 {
+  margin: 20px 0px 10px 0px;
+}
+
+p {
+  font-weight: 300;
+  margin: 10px 0px;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a:hover {
+  transition: 200ms;
+  color: var(--cyan)
+}
+
+/* ---- NFT CARD ---- */
+.nft-card {
+  height: 510px;
+  width: 330px;
+  background-color: var(--dark-blue-card);
+  padding: 30px;
+  border-radius: 10px;
+  align-items: center;
+  box-sizing: unset;
+  animation: fade-in 500ms;
+}
+
+.nft-img {
+  height: 300px;
+  width: 330px;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.nft-img img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.nft-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: hsla(178, 100%, 50%, 0.502);
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+}
+
+.nft-img:hover .nft-overlay {
+  transition: 400ms;
+  opacity: 1;
+}
+
+.eye-icon {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.about-nft {
+  justify-content: space-between;
+  border-bottom: solid var(--dark-blue-line) 1.9px;
+  padding: 0px 0px 10px 0px;
+}
+
+.about-nft img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+span.flex-row {
+  gap: 10px;
+  align-items: center;
+}
+
+.nft-creator {
+  gap: 20px;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.profile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: solid 1.9px var(--white);
+}
+
+/* ---- ANIMATION ---- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 500px) {
+  .nft-card {
+    transition: 500ms;
+    transform: scale(0.8);
   }
 }
