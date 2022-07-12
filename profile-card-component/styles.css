@@ -47,7 +47,7 @@ body {
   line-height: 1.5;
   font-size: 18px;
   font-family: 'Kumbh Sans', sans-serif;
-  background: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background: url("images/bg-pattern-top.svg"), url("images/bg-pattern-bottom.svg");
   background-repeat: no-repeat;
   background-position: right 50vw bottom 50vh, left 50vw top 50vh;
   background-color: var(--dark-cyan);
