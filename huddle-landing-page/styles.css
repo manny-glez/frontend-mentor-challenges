@@ -40,8 +40,17 @@ html:focus-within {
 
 body {
   min-height: 100vh;
+  background-color: var(--Violet);
+  background-image: url('images/bg-desktop.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 400;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 18px;
 }
 
 img,
@@ -70,5 +79,130 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+/* ---- GENERAL STYLES ---- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading);
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  padding: 10px 40px;
+  border: none;
+  border-radius: 30px;
+  margin: 25px 0;
+  background-color: var(--Soft-Magenta);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.button:hover {
+  transition: 400ms;
+  background-color: #fff;
+  color: var(--Violet);
+}
+
+/* ---- UTILITY CLASSES ---- */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* ---- LANDING PAGE ---- */
+#logo {
+  height: 55px;
+  margin: 50px;
+  display: inline-flex;
+}
+
+.landing-row {
+  margin: 0;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 60px;
+}
+
+.landing-illustration {
+  height: 450px;
+  object-fit: contain;
+}
+
+.landing-page-content {
+  margin-top: 40px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 120px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.social-link {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  place-content: center;
+  border: solid #fff 2px;
+}
+
+.social-link:hover {
+  transition: 200ms;
+  background-color: #fff;
+}
+
+.social-link:hover .fa-brands {
+  color: var(--Violet);
+}
+
+.fa-brands {
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 16px;
+    background-image: url('images/bg-mobile.svg');
+  }
+  #logo {
+    margin: 20px;
+    height: 45px;
+  }
+  .landing-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  .landing-page-content {
+    width: 90%;
+    text-align: center;
+  }
+  .landing-illustration {
+    width: 90%;
+    height: auto;
+  }
+  .social-links {
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .button {
+    padding: 10px 70px;
   }
 }
