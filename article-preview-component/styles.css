@@ -3,10 +3,10 @@
 
 /* ---- CUSTOM PROPERTIES ---- */
 :root {
-  --very-dark-grayish-blue: hsl(217, 19%, 35%);
-  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --dark-blue-heading: hsl(217, 19%, 35%);
+  --desaturated-blue-paragraph: hsl(214, 17%, 51%);
   --grayish-blue: hsl(212, 23%, 69%);
-  --light-grayish-blue: hsl(210, 46%, 95%);
+  --light-blue-bg: hsl(210, 46%, 95%);
 }
 
 /* ---- RESET ---- */
@@ -40,9 +40,14 @@ html:focus-within {
 
 body {
   min-height: 100vh;
+  background-color: var(--light-blue-bg);
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  color: var(--desaturated-blue-paragraph);
   font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  display: grid;
+  place-content: center;
 }
 
 img,
@@ -71,5 +76,114 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ---- GENERAL STYLES ---- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--dark-blue-heading);
+}
+
+p {
+  padding: 10px 0;
+}
+
+small {
+  color: var(--grayish-blue);
+}
+
+/* ---- ARTICLE CARD ---- */
+.article-card {
+  height: 300px;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  animation: fade-in 500ms;
+}
+
+.article-card-img {
+  width: 40%;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 900;
+}
+
+.article-card-content {
+  padding: 30px;
+  width: 60%;
+}
+
+.card-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 19px;
+}
+
+.article-details {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  line-height: 1.4;
+}
+
+.profile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.share-btn {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  border: none;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+/* ---- MEDIA QUERIES ---- */
+@media screen and (max-width: 900px) {
+  .article-card {
+    flex-direction: column;
+    margin: auto;
+    width: 400px;
+    height: 650px;
+  }
+
+  .article-card-img {
+    width: 100%;
+  }
+
+  .article-card-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .article-card {
+    width: 300px;
+  }
+}
+
+/* ---- ANIMATION ---- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
 }
