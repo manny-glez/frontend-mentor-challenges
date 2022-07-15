@@ -105,13 +105,13 @@ small {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
   animation: fade-in 500ms;
 }
 
 .article-card-img {
   width: 40%;
   object-fit: cover;
+  border-radius: 10px 0 0 10px;
 }
 
 h3 {
@@ -146,6 +146,11 @@ h3 {
   border-radius: 50%;
 }
 
+/* Share button */
+.share-container {
+  position: relative;
+}
+
 .share-btn {
   border-radius: 50%;
   height: 35px;
@@ -156,8 +161,64 @@ h3 {
   cursor: pointer;
 }
 
+.fa-share {
+  color: var(--desaturated-blue-paragraph);
+}
+
+.btn-active {
+  transition: 200ms;
+  color: var(--light-blue-bg);
+  background-color: var(--desaturated-blue-paragraph);
+}
+
+.share-options {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--dark-blue-heading);
+  padding: 15px 25px;
+  border-radius: 7px;
+  box-sizing: unset;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.share-options i {
+  color: var(--light-blue-bg);
+  font-size: 20px;
+}
+
+.options-active {
+  transition: 400ms;
+  opacity: 1;
+  pointer-events: unset;
+  transform: translateX(-50%);
+}
+
+#triangle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border-top: solid var(--dark-blue-heading) 10px;
+  border-bottom: solid transparent 10px;
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+}
+
 /* ---- MEDIA QUERIES ---- */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .article-card {
     flex-direction: column;
     margin: auto;
@@ -167,16 +228,35 @@ h3 {
 
   .article-card-img {
     width: 100%;
+    border-radius: 10px 10px 0 0;
   }
 
   .article-card-content {
     width: 100%;
+  }
+
+  .share-options {
+    left: -130px;
+    bottom: -9px;
+    gap: 10px
+  }
+
+  #triangle {
+    left: 99%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-top: solid transparent 12px;
+    border-bottom: solid transparent 12px;
+    border-left: solid var(--dark-blue-heading) 12px;
+    border-right: solid transparent 12px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .article-card {
     width: 300px;
+    margin: 20px 0;
   }
 }
 

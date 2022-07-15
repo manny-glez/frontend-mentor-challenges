@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <script src="script.js" defer></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/2bb7425346.js" crossorigin="anonymous"></script>
   <title>Article preview component</title>
 </head>
 <body>
@@ -22,9 +24,18 @@
             <small>28 Jun 2020</small>
           </div>
         </div>
-        <button class='share-btn'>
-          <img src="images/icon-share.svg" alt="">
-        </button>
+
+        <div class="share-container">
+          <button class="share-btn"><i class="fa-solid fa-share"></i></button>
+          <div class="share-options">
+            <small style='letter-spacing: 4px;'>SHARE</small>
+            <a href=""><i class="fa-brands fa-facebook-square"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-pinterest"></i></a>
+            <span id="triangle"></span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
