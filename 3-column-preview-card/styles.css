@@ -1,3 +1,18 @@
+/* ---- FONTS ---- */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Lexend+Deca&display=swap');
+
+/* ---- CUSTOM PROPERTIES ---- */
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+  --font-heading: 'Big Shoulders Display', sans-serif;
+  --font-body: 'Lexend Deca', sans-serif;
+}
+
+/* ---- RESET ---- */
 *,
 *::before,
 *::after {
@@ -30,6 +45,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 16px;
 }
 
 img,
