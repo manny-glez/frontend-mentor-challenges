@@ -1,3 +1,16 @@
+/* ---- FONT ---- */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+/* ---- CUSTOM PROPERTIES ---- */
+:root {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --ligh-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
 /* ---- RESET ---- */
 *,
 *::before,
@@ -29,8 +42,10 @@ html:focus-within {
 
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
 }
 
 img,
