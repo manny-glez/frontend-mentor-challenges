@@ -42,6 +42,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: var(--light-gray);
+  display: grid;
+  place-content: center;
+  font-family: 'Karla', sans-serif;
 }
 
 img,
@@ -70,5 +74,89 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ---- GENERAL STYLES ---- */
+h2 {
+  color:hsl(179, 62%, 43%);
+}
+
+h3 {
+  color:hsl(71, 73%, 54%);
+  margin-bottom: 10px;
+}
+
+small {
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.big {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.button {
+  padding: 10px 50px;
+  border: none;
+  background-color: var(--bright-yellow);
+  color: #fff;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.light {
+  background-color: #fff;
+  color: var(--Grayish-blue);
+  padding: 40px;
+}
+
+.light-cyan {
+  background-color: #4abebd;
+  color: #fff;
+  padding: 30px 40px;
+  line-height: 24px;
+}
+
+.dark-cyan {
+  background-color: #2bb3b1;
+  color: #fff;
+  padding: 30px 40px;
+  line-height: 24px;
+}
+
+.dark-cyan h3,
+.light-cyan h3 {
+  color: #fff;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.half-width {
+  width: 50%;
+}
+
+/* ---- PRICE GRID ---- */
+.price-grid {
+  max-width: 39rem;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  animation: fade-in 500ms;
+}
+
+/* ---- ANIMATION ---- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
 }
