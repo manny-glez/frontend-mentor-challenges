@@ -46,7 +46,9 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-size: 18px;
+  font-family: var(--ss-font);
+  display: flex;
+  flex-direction: row;
 }
 
 img,
@@ -76,4 +78,100 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---- UTILITY CLASSES ---- */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* ---- DETAILS PAGE ---- */
+.gradient-bg {
+  background: url('images/bg-main-desktop.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30%;
+  height: 100vh;
+  position: relative;
+}
+
+.form-container {
+  height: 100vh;
+  width: 70%;
+  display: grid;
+  place-content: center;
+}
+
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form .flex-row {
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px var(--light-violet);
+  padding: 10px;
+  margin-top: 5px;
+}
+
+input::placeholder {
+  color: var(--dark-violet)
+}
+
+.exp-date {
+  width: 70px;
+}
+
+.button {
+  background-color: var(--very-dark-violet);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* card front */
+.card-front {
+  height: 220px;
+  width: 400px;
+  background-image: url('images/bg-card-front.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+  color: var(--white);
+  position: absolute;
+  left: 50%;
+  top: 25%;
+}
+
+.card-back {
+  height: 220px;
+  width: 400px;
+  background-image: url('images/bg-card-back.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+  color: var(--white);
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  margin-left: 100px;
+}
+
+.card-front .flex-row {
+  justify-content: space-between;
 }
