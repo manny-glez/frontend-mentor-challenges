@@ -52,6 +52,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: 'Kumbh Sans', sans-serif;
+  background: linear-gradient(var(--soft-violet), var(--soft-blue));
 }
 
 img,
@@ -80,5 +81,146 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ---- GENERAL STYLES ---- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--very-dark-desaturated-blue);
+  font-weight: 700;
+}
+
+h1 {
+  padding: 0;
+  padding-left: 12px;
+  margin: 0;
+}
+
+/* ---- ACCORDION ---- */
+.accordion-container {
+  max-width: 850px;
+  margin: auto;
+  padding: 35px 35px 60px 35px;
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 22%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion {
+  padding: 20px;
+  width: 500px;
+}
+
+.accordion-item {
+  border-bottom: var(--light-grayish-blue) solid 1px;
+  cursor: pointer;
+}
+
+.accordion-question {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  color: var(--very-dark-grayish-blue);
+}
+
+.accordion-question img {
+  height: 14px;
+  width: 14px;
+  object-fit: contain;
+}
+
+.accordion-answer {
+  display: none;
+  padding: 12px;
+  color: var(--dark-grayish-blue);
+}
+
+/* ---- LEFT IMAGE ---- */
+.left-image {
+  position: relative;
+  height: 335px;
+  width: 500px;
+  display: grid;
+  place-content: center;
+  bottom: -100px;
+  right: 100px;
+  animation: img-fade-in 500ms;
+}
+
+.illustration-layer-1 {
+  z-index: 0;
+  position: relative;
+  bottom: 320px;
+}
+
+.illustration-layer-2 {
+  z-index: 1;
+  position: relative;
+}
+
+.illustration-layer-3 {
+  z-index: 2;
+  position: relative;
+  top: 270px;
+  right: 40px;
+}
+
+/* ---- MOBILE IMAGE ---- */
+.mobile-image {
+  position: absolute;
+  top: -100px;
+  display: none;
+}
+
+.mobile-img2 {
+  position: relative;
+  top: -70px;
+}
+
+/* ---- ANIAMTION ---- */
+@keyframes img-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .accordion-container {
+    flex-direction: column;
+    top: 17%;
+    max-width: 460px;
+    padding: 0;
+    padding-bottom: 40px;
+    padding-top: 100px;
+  }
+
+  .accordion-question,
+  .accordion-answer {
+    padding: 20px;
+  }
+
+  .accordion h1 {
+    text-align: center;
+  }
+
+  .left-image {
+    display: none;
+  }
+
+  .mobile-image {
+    display: unset;
+    animation: img-fade-in 500ms;
   }
 }
