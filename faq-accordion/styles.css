@@ -53,6 +53,7 @@ body {
   line-height: 1.5;
   font-family: 'Kumbh Sans', sans-serif;
   background: linear-gradient(var(--soft-violet), var(--soft-blue));
+  background-attachment: fixed;
 }
 
 img,
@@ -132,17 +133,24 @@ h1 {
   justify-content: space-between;
   padding: 12px;
   color: var(--very-dark-grayish-blue);
+  user-select: none;
+}
+
+.accordion-question:hover {
+  transition: 200ms ease;
+  color: var(--soft-red);
 }
 
 .accordion-question img {
   height: 14px;
   width: 14px;
   object-fit: contain;
+  pointer-events: none;
 }
 
 .accordion-answer {
   display: none;
-  padding: 12px;
+  padding: 0px 12px 12px 12px;
   color: var(--dark-grayish-blue);
 }
 
@@ -156,6 +164,7 @@ h1 {
   bottom: -100px;
   right: 100px;
   animation: img-fade-in 500ms;
+  user-select: none;
 }
 
 .illustration-layer-1 {
@@ -188,6 +197,21 @@ h1 {
   top: -70px;
 }
 
+/* ---- OPEN STYLES ---- */
+.open {
+  font-weight: 900;
+}
+
+.open .arrow-icon {
+  transition: 300ms;
+  transform: rotate(180deg);
+}
+
+.accordion-answer.open {
+  display: block;
+  font-weight: unset;
+}
+
 /* ---- ANIAMTION ---- */
 @keyframes img-fade-in {
   from {
@@ -206,9 +230,12 @@ h1 {
     padding-top: 100px;
   }
 
-  .accordion-question,
-  .accordion-answer {
+  .accordion-question {
     padding: 20px;
+  }
+
+  .accordion-answer {
+    padding: 0 20px 20px 20px;
   }
 
   .accordion h1 {
